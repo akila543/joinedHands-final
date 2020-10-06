@@ -1,0 +1,32 @@
+<div class="background">
+
+  <div class="align">
+<h1 style="text-align:center;color:#66004d;font-size: xx-large;font-weight: bolder;">JOINED HANDS</h1>
+    <mat-card style="box-shadow: 0px 4px 8px 0px rgba(0,0,0,1);">
+<p>
+  <mat-form-field appearance="outline" >
+    <mat-label class="padding">Username</mat-label>
+    <input matInput placeholder="Username" [(ngModel)]="username" class="padding">
+    <mat-icon matPrefix style="color:#b30086">person</mat-icon>
+  </mat-form-field>
+</p>
+<p>
+<mat-form-field appearance="outline">
+  <mat-label class="padding">Password</mat-label>
+  <input matInput placeholder="Password" [(ngModel)]="password" type="password" class="padding">
+  <mat-icon matPrefix style="color:#b30086">vpn_key</mat-icon>
+</mat-form-field>
+</p>
+<p>
+<button mat-raised-button  style="width:100%;height: 50px;background-color:#b30086;color:white" (click)="login()" >Login</button>
+</p>
+<p>
+<a style="font-size: small;margin-left: 21px;color:#4d4d00">Forgot Username/Password?</a>
+</p>
+<p>
+
+<a style="font-size: small;margin-left: 35%;color:blue" [routerLink]="['register']">Register</a>
+</p>
+</mat-card>
+</div>
+</div>

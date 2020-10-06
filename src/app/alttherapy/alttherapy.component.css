@@ -1,0 +1,31 @@
+h1{
+margin-top: 5%;
+margin-left: 2%;
+font-family:'DejaVu Sans Mono', 'monospace';
+font-size: 30px;
+color: #000099;
+font-weight:bold;
+text-shadow: 2px 2px #9999ff;
+}
+
+.background{
+  background-image: url('../../assets/alt4.jpg');
+  background-size: cover;
+  height:100%;
+  width: 100%;
+
+  display:table;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* margin-left: -5%; */
+}
+.mat-toolbar.mat-primary {
+    background: darkmagenta;
+    color: #fff;
+  }
+
+
+.mat-tab {
+    /* display: flex; */
+    background-color: pink;
+}

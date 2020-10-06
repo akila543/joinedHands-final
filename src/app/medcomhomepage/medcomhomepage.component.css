@@ -1,0 +1,35 @@
+.background{
+  background-image: url('../../assets/background.jpg');
+  background-size: cover;
+  height:80%;
+  width: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  display:flex;
+  /* background-position: center;
+  background-repeat: no-repeat; */
+  /* margin-left: -5%; */
+}
+
+.align{
+  margin-top: 13%;
+  margin-left: 50%;
+}
+
+.card-hover:hover {
+  box-shadow: 0 8px 26px 0 rgba(0,0,0,0.2);
+}
+
+.heading{
+  /* font-family:'Avantgarde', 'TeX Gyre Adventor', 'URW Gothic L', 'sans-serif'; */
+  font-family:'URW Chancery L', 'cursive';
+  font-size: 50px;
+  color:#ffffff;
+  font-weight:bold;
+  text-shadow: 4px 4px #cc0099;
+}
+
+.mat-toolbar.mat-primary {
+    background: darkmagenta;
+    color: #fff;
+  }

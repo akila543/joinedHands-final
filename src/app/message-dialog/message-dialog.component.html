@@ -1,0 +1,35 @@
+<div *ngIf="flag=='register'">
+<mat-card>
+    <mat-card-content>
+        <p>You have successfully registered. 
+            You will receive a mail as soon as your background verification is completed.</p>
+        <button mat-raised-button color="primary" (click)="home()" style="margin-left:45%">OK</button>
+    </mat-card-content>
+</mat-card>
+</div>
+
+<div *ngIf="flag=='logout'">
+    <mat-card>
+        <mat-card-content>
+            <p>You have successfully logged out.</p>
+            <button mat-raised-button color="primary" (click)="home()" style="margin-left:35%">OK</button>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+<div *ngIf="flag=='login'">
+    <mat-card>
+        <mat-card-content>
+            <p>
+                You are not logged in. Please login to view the contents inside. 
+            </p>
+            <p>
+                If you are a new user, please register yourself.    
+            </p>
+            <button mat-raised-button color="primary" (click)="login()" style="margin-left:12%">Login</button>
+            <button mat-raised-button color="primary" (click)="register()" style="margin-left:10%">Register</button>
+            <button mat-raised-button color="primary" (click)="home()" style="margin-left:10%">OK</button>
+        </mat-card-content>
+    </mat-card>
+</div>

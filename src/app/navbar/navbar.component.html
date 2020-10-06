@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" *ngIf="flag=='guest'"> 
+    <span style="cursor: pointer;" (click)="home()">Joined Hands</span>
+  <span class="example-spacer"></span>
+  <!-- <span style="margin-right:30px">Dear Guest</span> -->
+  <span style="margin-right:30px;cursor:pointer;" (click)="login()">Login</span>
+  <span style="margin-right:30px;cursor:pointer;" (click)="register()">Register</span>
+  <div>
+  <div style="text-align: center;padding-top: 10px;">
+    <mat-icon >account_circle</mat-icon>
+  </div>
+  <div style="margin-top: -10px;">
+    <span style="font-size:14px;">Guest</span>
+  </div>
+</div>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="flag!='guest'"> 
+  <span style="cursor: pointer;" (click)="home()">Joined Hands</span>
+<span class="example-spacer"></span>
+<div style="margin-right:30px">
+<div style="text-align: center;padding-top: 10px;">
+  <mat-icon >account_circle</mat-icon>
+</div>
+<div style="margin-top: -10px;">
+  <span style="font-size:14px;">{{user}}</span>
+</div>
+</div>
+<button (click)="logout()">
+  <mat-icon>exit_to_app</mat-icon>
+</button>
+</mat-toolbar>
+

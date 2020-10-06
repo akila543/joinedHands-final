@@ -1,0 +1,29 @@
+.background{
+  background-image: url('../../assets/pinkribbon.jpg');
+  background-size: cover;
+  height:100%;
+  width: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  display:flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* margin-left: -5%; */
+}
+
+.align{
+  margin-top: 10%;
+  margin-left: 40%;
+}
+
+.padding{
+padding-left: 10px;
+padding-right: 74px;
+}
+
+.mat-form-field {
+    /* display: i#b30000nline-block;
+    position: relative;
+    text-align: left; */
+    margin-bottom: -15.25px !important;
+}

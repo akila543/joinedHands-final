@@ -1,0 +1,136 @@
+
+<div class="background">
+<mat-card style="width:50%;margin:auto auto;opacity:0.8">
+  <span style="color:darkmagenta;font-weight:400;font-size:24px;margin-left: 45%;text-decoration: underline;">Register</span>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Basic Details</ng-template>
+      <mat-form-field>
+        <mat-label>I am a:</mat-label>
+        <mat-select [formControl]="registerControl">
+          <mat-option *ngFor="let item of register" [value]="item">{{item}}
+          </mat-option>
+           <mat-optgroup *ngFor="let group of registerGroups" [label]="group.name"
+                         [disabled]="group.disabled">
+             <mat-option *ngFor="let role of group.role" [value]="role.value">
+               {{role.value}}
+             </mat-option>
+           </mat-optgroup>
+         </mat-select>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="First name, Last name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field style="width:40%;margin-right: 20%;">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age" formControlName="age" required>
+      </mat-form-field>
+      <!-- <br/> -->
+      <mat-form-field style="width:40%">
+        <mat-label>Gender</mat-label>
+        <mat-select [formControl]="gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <mat-label>Email ID</mat-label>
+        <input matInput placeholder="Email ID" formControlName="email" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <mat-label>Phone No</mat-label>
+        <input matInput placeholder="Phone No" formControlName="phone" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <mat-label>I am willing to</mat-label>
+        <mat-select  multiple [(ngModel)]="volunteer" [formControl]="service"  (selectionChange)="someMethod($event.value)">
+          <mat-option *ngFor="let item of services" [value]="item">{{item}}</mat-option>
+          <!-- <mat-option value="Run Errands">Run Errands</mat-option>
+          <mat-option value="Counselling">Offer Counselling Sessions</mat-option>
+          <mat-option value="Meal">Offer a meal</mat-option>
+          <mat-option value="Baby">Offer Baby sitting</mat-option> -->
+        </mat-select>
+      </mat-form-field>
+      <div style="margin-top:3%">
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Background Verification Details">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field>
+        <mat-label>Address 1</mat-label>
+        <input matInput formControlName="Address1" placeholder="Address Line 1"
+               required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <mat-label>Address 2</mat-label>
+        <input matInput formControlName="Address2" placeholder="Address Line 2">
+      </mat-form-field>
+      <br/>
+      <mat-form-field style="width:30%; margin-right:5%">
+        <mat-label>City :</mat-label>
+        <input matInput placeholder="City"  type="text" formControlName="city" required>
+      </mat-form-field>
+      <mat-form-field style="width:30%;margin-right:5%">
+        <mat-label>State :</mat-label>
+        <input matInput placeholder="State"  type="text" formControlName="state" required>
+      </mat-form-field>
+      <mat-form-field style="width:30%;">
+        <mat-label>Zip Code :</mat-label>
+        <input matInput placeholder="zipcode"  type="text" formControlName="zipcode" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Identity Document</mat-label>
+        <mat-select [formControl]="id">
+          <mat-option value="Driving License">Driving License</mat-option>
+          <mat-option value="State Issued ID">State Issued ID</mat-option>
+          <mat-option value="Passport">Passport</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br/>
+      <mat-form-field style="width:45%; margin-right:10%">
+        <mat-label>License Number :</mat-label>
+        <input matInput placeholder="Number"  type="text" formControlName="licenseno" required>
+      </mat-form-field>
+      <mat-form-field style="width:45%;">
+        <mat-label> Issuing State :</mat-label>
+        <input matInput placeholder="Issuing State"  type="text" formControlName="licensestate" required>
+      </mat-form-field>
+      <br/>
+      <mat-form-field style="width:45%; margin-right:10%">
+        <mat-label>ID Number :</mat-label>
+        <input matInput placeholder="Number"  type="text" formControlName="idno" required>
+      </mat-form-field>
+      <mat-form-field style="width:45%;">
+        <mat-label>Issuing State :</mat-label>
+        <input matInput placeholder="State"  type="text" formControlName="idstate" required>
+      </mat-form-field>
+      <div style="margin-top:3%">
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" style="margin-left:5%" (click)="save()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You have successfully registered. You will receive a mail as soon as your background verification is completed.</p>
+
+    <div>
+      <button mat-raised-button color="primary">Go to Login</button>
+      <button mat-raised-button matStepperPrevious color="primary">Back</button>
+      <button mat-raised-button (click)="stepper.reset()" color="primary">Reset</button>
+    </div>
+  </mat-step> -->
+</mat-horizontal-stepper>
+</mat-card>
+</div>
